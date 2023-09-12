@@ -1,9 +1,9 @@
 {
   "name": "arceus-cli",
   "version": "0.0.2",
+  "type": "module",
   "description": "arceus脚手架",
   "main": "bin/index.js",
-  "type": "module",
   "engines": {
     "node": ">=14.16"
   },
@@ -22,7 +22,7 @@
   },
   "scripts": {
     "dev": "node ./dist/index.js",
-    "build": "rollup --config"
+    "build": "rollup -c"
   },
   "dependencies": {
     "@inquirer/prompts": "^3.0.4",
