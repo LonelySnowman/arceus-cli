@@ -1,6 +1,6 @@
 {
   "name": "arceus-cli",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "type": "module",
   "description": "arceus脚手架",
   "main": "bin/index.cjs",
