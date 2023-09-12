@@ -13,7 +13,6 @@ export default defineConfig([
         output: [
             {
                 dir: 'dist',
-                entryFileNames: '[name].cjs',
                 format: 'cjs',
             }
         ],

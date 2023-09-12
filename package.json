@@ -1,28 +1,23 @@
 {
   "name": "arceus-cli",
   "version": "0.0.5",
-  "type": "module",
   "description": "arceus脚手架",
-  "main": "bin/index.cjs",
+  "main": "bin/index.js",
   "engines": {
-    "node": ">=14.16"
+    "node": ">=16"
   },
-  "keywords": [
-    "pure-thin-cli",
-    "pure-admin-thin",
-    "vue-pure-admin"
-  ],
+  "keywords": ["sv3-template"],
   "author": {
     "name": "lonelysnowman",
     "email": "2438490168@qq.com"
   },
   "license": "MIT",
   "bin": {
-    "arceus": "bin/index.cjs"
+    "arceus": "bin/index.js"
   },
   "scripts": {
     "dev": "node ./dist/index.js",
-    "build": "rollup -c"
+    "build": "rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
     "@inquirer/prompts": "^3.0.4",
