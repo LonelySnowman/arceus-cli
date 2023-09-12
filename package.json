@@ -3,7 +3,7 @@
   "version": "0.0.3",
   "type": "module",
   "description": "arceus脚手架",
-  "main": "bin/index.js",
+  "main": "bin/index.cjs",
   "engines": {
     "node": ">=14.16"
   },
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "bin": {
-    "arceus": "bin/index.js"
+    "arceus": "bin/index.cjs"
   },
   "scripts": {
     "dev": "node ./dist/index.js",
