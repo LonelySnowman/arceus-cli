@@ -1,12 +1,14 @@
 {
   "name": "arceus-cli",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "arceus脚手架",
   "main": "bin/index.js",
   "engines": {
     "node": ">=16"
   },
-  "keywords": ["sv3-template"],
+  "keywords": [
+    "sv3-template"
+  ],
   "author": {
     "name": "lonelysnowman",
     "email": "2438490168@qq.com"
