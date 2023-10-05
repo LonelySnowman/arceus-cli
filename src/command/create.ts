@@ -1,20 +1,28 @@
 import { select } from '@inquirer/prompts';
+import { templates } from "../constants";
+import { TemplateInfo } from "../types";
+import { clone } from "../utils/clone";
+import log from "../utils/log";
 
 // 项目创建流程
-export default async function create(name?: string, option?: any) {
-    console.log(option);
-    // console.log(name)
-    // const inputName = await input({ message: '请输入项目名称' });
-    // 选择模板名称
+export default async function create(prjName: string) {
+    // 初始化模板列表
+    const templateList = [...templates.entries()].map((item: [string, TemplateInfo]) => {
+        const [name, info] = item;
+        return {
+            name,
+            value: name,
+            description: info.description
+        }
+    })
     const templateName = await select({
-        message: 'Select a package manager',
-        choices: [
-            {
-                name: 'sv3-template',
-                value: 'sv3-template',
-                description: 'Vue3快速开发模板',
-            }
-        ]
+        message: '请选择需要初始化的模板:',
+        choices: templateList
     });
-    console.log(name, templateName);
+    const gitRepoInfo = templates.get(templateName)
+    if (gitRepoInfo) {
+        await clone(gitRepoInfo.downloadUrl , prjName, ['-b', `${gitRepoInfo.branch}`])
+    } else {
+        log.error(`${templateName} 模板不存在`)
+    }
 }

@@ -1,13 +1,14 @@
-// 模板列表
-export const templates = {
-    sv3Template: {
-        downloadUrl: 'https://github.com/LonelySnowman/sv3-template.git',
-        description: 'vue3快速开发模板',
-        branch: 'main'
-    },
-    sv3Admin: {
-        downloadUrl: 'https://github.com/LonelySnowman/sv3-admin.git',
-        description: 'vue3后台模板',
-        branch: 'main'
-    },
-}
+import { TemplateInfo } from "./types";
+
+export { name, version } from '../package.json'
+
+export const templates: Map<string, TemplateInfo> = new Map(
+    [
+        ["sv3-template", {
+            name: "sv3-template",
+            downloadUrl: 'https://github.com/LonelySnowman/sv3-template.git',
+            description: 'vue3快速开发模板',
+            branch: 'main'
+        }],
+    ]
+)

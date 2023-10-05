@@ -1,14 +1,14 @@
-import chalk from "chalk";
+import logSymbols from 'log-symbols'
 
 export const log = {
     error: (msg: string) => {
-        console.log(chalk.red('✖ '), msg)
+        console.log(logSymbols.error, msg)
     },
     success: (msg: string) => {
-        console.log(chalk.green('✔ '), msg)
+        console.log(logSymbols.success, msg)
     },
     warning: (msg: string) => {
-        console.log(chalk.yellow('⚠ '), msg)
+        console.log(logSymbols.warning, msg)
     }
 }
 

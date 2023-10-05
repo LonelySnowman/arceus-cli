@@ -9,6 +9,11 @@
   "keywords": [
     "sv3-template"
   ],
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
   "author": {
     "name": "lonelysnowman",
     "email": "2438490168@qq.com"
@@ -19,28 +24,31 @@
   },
   "scripts": {
     "dev": "node ./dist/index.js",
-    "build": "rollup -c --bundleConfigAsCjs"
+    "build": "rollup -c rollup.config.js --bundleConfigAsCjs"
   },
   "dependencies": {
     "@inquirer/prompts": "^3.0.4",
     "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.1.0",
     "@rollup/plugin-terser": "^0.4.3",
-    "@rollup/plugin-typescript": "^11.1.2",
+    "@rollup/plugin-typescript": "^11.1.5",
     "@types/node": "^16.18.40",
     "axios": "^1.5.0",
     "chalk": "^4.1.2",
     "commander": "^11.0.0",
-    "ora": "^7.0.1",
+    "log-symbols": "^4.1.0",
+    "ora": "5",
     "progress-estimator": "^0.3.1",
     "pure-thin-cli": "^0.1.8",
     "rollup": "^3.28.0",
     "rollup-plugin-dts": "^5.3.0",
     "rollup-plugin-esbuild": "^5.0.0",
     "rollup-plugin-node-externals": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.36.0",
     "simple-git": "^3.19.1",
     "ts-node": "^10.9.1",
     "tslib": "^2.6.1",
-    "typescript": "^5.1.6"
+    "typescript": "^5.2.2"
   }
 }

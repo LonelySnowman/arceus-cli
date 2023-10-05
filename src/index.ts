@@ -1,6 +1,6 @@
 import { Command } from 'commander'
-// import create from "./command/create";
-import { clone } from "./utils/clone";
+import create from "./command/create";
+import update from "./command/update";
 
 const program = new Command('arceus');
 
@@ -10,10 +10,8 @@ program
 program
     .command('update')
     .description('更新 arceus 至最新版本')
-    .action(async (cmd, test) => {
-        console.log(cmd)
-        console.log(test)
-        console.log('update command');
+    .action(async () => {
+        await update()
     });
 
 program
@@ -22,10 +20,8 @@ program
     .argument('<name>', '项目名称')
     .option('-f, --force', '强制覆盖当前项目目录')
     .action(async (name, options) => {
-        // create(name);
-        await clone("git@github.com:LonelySnowman/arceus-cli.git");
-        console.log(name, options);
-        console.log('create command');
+        console.log(name, options)
+        await create(name);
     });
 
 program.parse();
