@@ -9,6 +9,6 @@ export const templates: Map<string, TemplateInfo> = new Map(
             downloadUrl: 'https://github.com/LonelySnowman/sv3-template.git',
             description: 'vue3快速开发模板',
             branch: 'main'
-        }],
+        }]
     ]
 )

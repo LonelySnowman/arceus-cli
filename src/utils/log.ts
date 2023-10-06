@@ -9,7 +9,10 @@ export const log = {
     },
     warning: (msg: string) => {
         console.log(logSymbols.warning, msg)
-    }
+    },
+    info: (msg: string) => {
+        console.log(logSymbols.info, msg)
+    },
 }
 
 export default log

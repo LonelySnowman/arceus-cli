@@ -1,6 +1,8 @@
 import { Command } from 'commander'
 import create from "./command/create";
 import update from "./command/update";
+import { isNeedUpdate } from "./utils/npm";
+import { version, name } from "./constants";
 
 const program = new Command('arceus');
 
@@ -19,9 +21,9 @@ program
     .description('创建一个新项目')
     .argument('<name>', '项目名称')
     .option('-f, --force', '强制覆盖当前项目目录')
-    .action(async (name, options) => {
-        console.log(name, options)
-        await create(name);
+    .action(async (dirName, options) => {
+        await isNeedUpdate(name, version);
+        await create(dirName);
     });
 
 program.parse();
