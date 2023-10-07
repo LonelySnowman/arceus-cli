@@ -7,7 +7,7 @@ import { version, name } from "./constants";
 const program = new Command('arceus');
 
 program
-    .version("0.0.1");
+    .version(version);
 
 program
     .command('update')
