@@ -20,8 +20,7 @@ program
     .command('create')
     .description('创建一个新项目')
     .argument('<name>', '项目名称')
-    .option('-f, --force', '强制覆盖当前项目目录')
-    .action(async (dirName, options) => {
+    .action(async (dirName) => {
         await isNeedUpdate(name, version);
         await create(dirName);
     });
