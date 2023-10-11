@@ -6,7 +6,7 @@ export const templates: Map<string, TemplateInfo> = new Map(
     [
         ["sv3-template", {
             name: "sv3-template",
-            downloadUrl: 'https://github.com/LonelySnowman/sv3-template.git',
+            downloadUrl: 'git@github.com:LonelySnowman/sv3-template.git',
             description: 'vue3快速开发模板',
             branch: 'main'
         }]
