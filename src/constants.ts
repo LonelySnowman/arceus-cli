@@ -1,7 +1,5 @@
 import { TemplateInfo } from "./types";
 
-export { name, version } from '../package.json'
-
 export const templates: Map<string, TemplateInfo> = new Map(
     [
         ["sv3-template", {

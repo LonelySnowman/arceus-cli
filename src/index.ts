@@ -2,7 +2,7 @@ import { Command } from 'commander'
 import create from "./command/create";
 import update from "./command/update";
 import { isNeedUpdate } from "./utils/npm";
-import { version, name } from "./constants";
+import { version, name } from "../package.json";
 
 const program = new Command('arceus');
 
