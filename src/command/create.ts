@@ -1,8 +1,11 @@
-import { select } from '@inquirer/prompts';
+import { select, input } from '@inquirer/prompts';
 import { templates } from "../constants";
 import { TemplateInfo } from "../types";
 import { clone } from "../utils/clone";
 import log from "../utils/log";
+import path from "path";
+import fs from "fs-extra";
+import { isOverwrite } from "../utils/file";
 
 // 项目创建流程
 export default async function create(prjName: string) {
@@ -15,9 +18,24 @@ export default async function create(prjName: string) {
             description: info.description
         }
     })
+
+    // 文件名称未传入需要输入
+    if (!prjName) prjName = await input({ message: '请输入项目名称' });
+    // 文件已存在处理
+    const filePath = path.resolve(process.cwd(), prjName)
+    if (fs.existsSync(filePath)) {
+        const run = await isOverwrite(prjName)
+        if (run) {
+            await fs.remove(filePath)
+        } else {
+            return
+        }
+    }
+
+    // 选择模板
     const templateName = await select({
         message: '请选择需要初始化的模板:',
-        choices: templateList
+        choices: templateList,
     });
     const gitRepoInfo = templates.get(templateName)
     if (gitRepoInfo) {

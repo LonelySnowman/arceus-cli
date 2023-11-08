@@ -49,9 +49,10 @@ export const isNeedUpdate = async (name: string, curVersion: string) => {
     const need = lodash.gt(latestVersion, curVersion)
     if (need) {
         spinner.stop()
-        log.info(`检测到 arceus 最新版:${latestVersion} 当前版本:${curVersion} ~`)
-        log.info("可执行 arceus update 或 npm install arceus-cli@latest -g 进行更新 ~")
+        log.info(`检测到 arceus 最新版:${chalk.blueBright(latestVersion)} 当前版本:${chalk.blueBright(curVersion)} ~`)
+        return true
     } else {
-        spinner.succeed("arceus 已为最新版")
+        spinner.succeed(`arceus 已为最新版 ${chalk.blueBright(curVersion)}`)
+        return false
     }
 }

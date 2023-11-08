@@ -13,15 +13,15 @@ program
     .command('update')
     .description('更新 arceus 至最新版本')
     .action(async () => {
-        await update()
+        const run = await isNeedUpdate(name, version);
+        if (run) await update()
     });
 
 program
     .command('create')
     .description('创建一个新项目')
-    .argument('<name>', '项目名称')
+    .argument('[name]', '项目名称')
     .action(async (dirName) => {
-        await isNeedUpdate(name, version);
         await create(dirName);
     });
 
