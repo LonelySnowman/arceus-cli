@@ -1,6 +1,12 @@
 # arceus-cli
 
-## 📕 简介
+![Npm Version](https://img.shields.io/npm/v/arceus-cli)
+
+## 📖简介
+
+- 用于快速搭建前端项目的命令行`cli`工具
+
+## 📕 模板
 
 -   ✅ 快速生成 Vue3 框架模板 | [Vue3快速开发模板](https://github.com/LonelySnowman/sv3-template.git)
 -   ✅ 快速生成 Vue3 框架模板（精简版） | [Vue3快速开发模板（精简版）](https://github.com/LonelySnowman/sv3-template/tree/thin)
@@ -12,7 +18,7 @@
   npm i arceus-cli -g
 ```
 
-## 📕 使用
+## 🚩使用
 
 ```bash
 # 使用模板创建一个新项目
