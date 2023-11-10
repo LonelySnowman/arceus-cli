@@ -1,6 +1,6 @@
 {
     "name": "arceus-cli",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "arceus脚手架",
     "main": "dist/index.js",
     "engines": {
