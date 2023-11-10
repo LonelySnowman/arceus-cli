@@ -1,20 +1,17 @@
-import { Command } from 'commander'
-import create from "./command/create";
-import update from "./command/update";
-import { isNeedUpdate } from "./utils/npm";
-import { version, name } from "../package.json";
+import { Command } from 'commander';
+import create from './command/create';
+import update from './command/update';
+import { version } from '../package.json';
 
 const program = new Command('arceus');
 
-program
-    .version(version);
+program.version(version, '-v, --version');
 
 program
     .command('update')
     .description('更新 arceus 至最新版本')
     .action(async () => {
-        const run = await isNeedUpdate(name, version);
-        if (run) await update()
+        await update();
     });
 
 program
